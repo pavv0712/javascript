@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>가위바위보</title>
+        <style>
+          body {
+              margin:0px;
+              padding:0px;
+          }
+            
+        </style>
+        <script>
+            window.onload = () => {
+                let images = document.querySelectorAll('#rsp img')
+                for (image of images){
+                    image.onclick = (event) =>{
+                        let user = event.target.getAttribute('data_user')
+                        let computer = Math.floor(Math.random()*3)+1
+                        let result =document.querySelector('#result') 
+                        result.innerHTML =`
+                        <img src = '${user}.png'> <img src = '${computer}.png'>`
+                        let text_result = document.querySelector('#text_result')
+                        if ((user == 1 && computer == 3)||(user == 2 && computer == 1)||(user == 3 && computer == 2)){
+                            text_result.innerHTML = '이김'
+                        }
+                        else if (user == computer) {
+                            text_result.innerHTML = '비김'
+                        }
+                        else {
+                            text_result.innerHTML = '짐'
+                        }
+                        }
+                    }
+                }
+
+
+
+
+        </script>
+    <body>
+        <div>셋중 하나를 골라주세요</div>
+        
+        <div id= 'rsp'>
+            <img id = 'sci' src = '1.png' data_user = '1'>
+            <img id = 'rock' src = '2.png' data_user = '2'>
+            <img id = 'paper' src = '3.png' data_user = '3'>
+        </div>
+        
+        
+        <div id = 'result'>
+        </div>
+
+        <div id = 'text_result'>
+        </div>
+
+
+    </body>
+</html>

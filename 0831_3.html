@@ -1,0 +1,17 @@
+<html>
+const dog = {
+        name: "jjong",
+        color: "black",
+        hungry: 0,
+        walk: function() {
+            this.hungry -= 1;
+        },
+        eat: function() {
+            this.hungry += 1;
+        }
+    }
+    console.dir(dog);
+    console.log(dog.color);
+    dog.eat();
+    console.log(dog.hungry);
+</html>

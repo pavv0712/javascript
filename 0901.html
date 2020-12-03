@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>자바스크립트 테스트3</title>
+        <script>
+        class Character{
+            constructor(){
+                this.health = 200
+            }
+            move() {
+                this.health -= 10
+            }
+            rest() {
+                this.health += 10
+            }
+            checkHealth() {
+                return this.health
+            }
+        }
+
+        class Knight extends Character{
+                constructor(){
+                     super()            
+
+                }
+                move() {
+                    super.move()
+                    this.health -= 5
+                }
+                attack() {
+                    console.log('공격합니다')
+                }
+        }
+        class Healer extends Character{
+                    constructor() {
+                        super()
+                        this.mana = 100
+                    }
+                    heal(character) {
+                        this.mana -= 10
+                        character.rest()
+                        character.rest()
+
+                    }
+                    checkMana() {
+                        return this.mana
+                    }
+
+
+        }
+
+
+
+
+        Knight1 = new Knight()
+        console.dir(Knight1)
+        Knight1.move()
+        Knight1.attack() 
+        
+        Healer2 = new Healer()
+        console.dir(Healer2)
+        Healer2.heal(Knight1)
+
+        
+        
+        </script>
+    
+    </head>
+    <body>
+    
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>자바스크립트 테스트2</title>
+        <style>
+        #hello > div{
+            float:left;
+        }
+        </style>
+        
+        <script>
+            //Head에 스크립트 달기위해
+            window.onload = () => {
+            let Hello = document.querySelector('#hello')
+            for(i=2; i<10; i+=1){
+                let div = document.createElement('div')
+                let text = document.createTextNode(i + '단')
+                div.appendChild(text)
+                
+                for(j = 1; j < 10; j += 1){
+                    let div2 = document.createElement('div')
+                    let text2 = document.createTextNode(`${i} x ${j} = ${i * j}`)
+                    div2.appendChild(text2)
+                    div.appendChild(div2)
+                }
+            Hello.appendChild(div)
+            }
+        }
+        </script>
+    
+    </head>
+    <body>
+    <div id = 'hello'>
+        
+    </div>
+    
+    </body>
+
+</html>
+
+

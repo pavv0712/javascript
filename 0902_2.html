@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>자바스크립트 테스트2</title>
+        <style>
+
+        </style>
+        
+        <script>
+        fetch("https://api.github.com/users?since=1000")
+            .then(function(response){
+                return response.json();
+            }).then(function(response){
+                let body = document.querySelector("body");
+                html = ""
+                for(data of response) {
+                        html += `<div><div><img src="${data.avatar_url}"/></div>`
+                        html += `<div>${data.login}</div></div>`
+                    }
+                body.innerHTML = html
+            });
+        </script>
+    
+    </head>
+    <body>
+        
+
+    </body>
+
+</html>
